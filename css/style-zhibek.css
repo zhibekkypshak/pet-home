@@ -254,4 +254,36 @@ a:focus-visible {
     .featured-pets h2 {
         font-size: 24px;
     }
+
+    .pet-controls {
+    max-width: 600px;
+}
+
+.pet-controls input,
+.pet-controls select {
+    padding: 12px;
+}
+
+.favorite-btn {
+    margin-top: 8px;
+}
+
+.pet-card {
+    transition: transform 0.2s ease;
+}
+
+.pet-card:hover {
+    transform: translateY(-5px);
+}
+.validation-error {
+    font-size: 0.875rem;
+}
+
+.form-control.is-invalid {
+    border-color: #dc3545;
+}
+
+#form-status {
+    font-weight: 600;
+}
 }

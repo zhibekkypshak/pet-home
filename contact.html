@@ -44,7 +44,7 @@
                     are required.
                 </p>
 
-                <form id="contact-form">
+                <form id="contact-form" novalidate>
                     <div class="mb-3">
                         <label for="name" class="form-label">
                             Name <span class="required-mark">*</span>
@@ -56,7 +56,9 @@
                                class="form-control"
                                autocomplete="name"
                                required>
+                               <small class="form-text text-muted name-preview"> Your name will appear here. </small>
                     </div>
+                    
 
                     <div class="mb-3">
                         <label for="email" class="form-label">
@@ -118,6 +120,9 @@
                      aria-labelledby="info-heading">
 
                 <div class="contact-info">
+                    <button type="button" id="toggle-contact" class="btn button mb-3">
+                        Show / Hide Contact Details
+                    </button>
                     <h2 id="info-heading">Contact Information</h2>
 
                     <p>
@@ -147,6 +152,11 @@
 
         <section class="visiting-hours">
             <h2>Visiting Hours</h2>
+
+            <button type="button" id="toggle-hours"
+                    class="btn button mb-3">
+                Show / Hide Visiting Hours
+            </button>
 
             <div class="table-responsive">
                 <table class="table table-bordered">
@@ -190,31 +200,9 @@
         <p>&copy; 2026 Pet Home</p>
     </footer>
 
-    <script>
-    const contactForm = document.getElementById("contact-form");
-    const formStatus = document.getElementById("form-status");
-    const petSelect = document.getElementById("pet");
-
-    const params = new URLSearchParams(window.location.search);
-    const selectedPet = params.get("pet");
-
-    if (selectedPet) {
-        const petExists = Array.from(petSelect.options).some(
-            option => option.value === selectedPet
-        );
-
-        if (petExists) {
-            petSelect.value = selectedPet;
-        }
-    }
-
-    contactForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        formStatus.textContent =
-            "Your form is valid. This demo does not send messages.";
-    });
-</script>
+    <script src="js/contact.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery.js"></script>
 
 </body>
 </html>
