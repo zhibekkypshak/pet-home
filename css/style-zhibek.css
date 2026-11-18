@@ -254,8 +254,9 @@ a:focus-visible {
     .featured-pets h2 {
         font-size: 24px;
     }
+}
 
-    .pet-controls {
+.pet-controls {
     max-width: 600px;
 }
 
@@ -285,5 +286,4 @@ a:focus-visible {
 
 #form-status {
     font-weight: 600;
-}
 }
