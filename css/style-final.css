@@ -1,0 +1,432 @@
+/* =========================================================
+   Final project styles: Breed Explorer, Pet Match quiz,
+   statistics panel, accessibility panel and dark mode.
+   ========================================================= */
+
+:root {
+    --ph-green: #356b46;
+    --ph-green-dark: #264e33;
+    --ph-surface: #ffffff;
+    --ph-border: #e2e8df;
+    --ph-muted: #5d685f;
+    --ph-soft: #edf3e9;
+}
+
+/* ---------- Shared panels ---------- */
+.explorer-panel,
+.quiz-card,
+.fact-card,
+.stats-panel,
+.saved-result,
+.best-match {
+    background-color: var(--ph-surface);
+    border: 1px solid var(--ph-border);
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+}
+
+.empty-message {
+    grid-column: 1 / -1;
+    padding: 24px;
+    text-align: center;
+    color: var(--ph-muted);
+    background: var(--ph-soft);
+    border-radius: 12px;
+}
+
+/* ---------- Statistics panel (Pets page) ---------- */
+.stats-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 20px;
+}
+
+.stat-tiles {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.stat-tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 14px;
+    background: var(--ph-soft);
+    border-radius: 12px;
+    font-size: 14px;
+    color: var(--ph-muted);
+}
+
+.stat-number {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--ph-green);
+    line-height: 1.1;
+}
+
+.stat-bar-row {
+    display: grid;
+    grid-template-columns: 70px 1fr 28px;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.stat-bar-track {
+    height: 12px;
+    background: var(--ph-soft);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.stat-bar-fill {
+    height: 100%;
+    background: var(--ph-green);
+    border-radius: 6px;
+    transition: width 0.4s ease;
+}
+
+.stat-bar-value {
+    text-align: right;
+    font-weight: bold;
+}
+
+.pet-controls .btn {
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+/* ---------- Breed Explorer ---------- */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.photo-grid--small {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.photo-card {
+    margin: 0;
+    overflow: hidden;
+    background: var(--ph-surface);
+    border: 1px solid var(--ph-border);
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    animation: fadeUp 0.35s ease;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.photo-grid--small .photo-card img {
+    height: 160px;
+}
+
+.photo-card figcaption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 14px;
+}
+
+.photo-note {
+    font-size: 14px;
+    color: var(--ph-muted);
+    overflow-wrap: anywhere;
+}
+
+.fact-card {
+    max-width: 720px;
+    border-left: 6px solid var(--ph-green);
+}
+
+.fact-text {
+    font-size: 18px;
+    min-height: 54px;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Pet Match quiz ---------- */
+.quiz-wrapper {
+    max-width: 760px;
+}
+
+.quiz-step {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.quiz-step legend {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.quiz-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    border: 2px solid var(--ph-border);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.quiz-option:hover {
+    border-color: var(--ph-green);
+}
+
+.quiz-option.selected {
+    border-color: var(--ph-green);
+    background-color: var(--ph-soft);
+    font-weight: bold;
+}
+
+.quiz-option input {
+    accent-color: var(--ph-green);
+    width: 18px;
+    height: 18px;
+}
+
+.quiz-option:focus-within {
+    outline: 3px solid #c17b27;
+    outline-offset: 2px;
+}
+
+.shake {
+    animation: shake 0.35s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    75% { transform: translateX(6px); }
+}
+
+.best-match {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 24px;
+    align-items: center;
+}
+
+.best-match-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.match-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.match-row img {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.saved-result {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 20px;
+    background: var(--ph-soft);
+}
+
+/* ---------- Accessibility panel ---------- */
+.a11y-panel {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px;
+    background: var(--ph-surface);
+    border: 1px solid var(--ph-border);
+    border-radius: 999px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.a11y-btn {
+    min-width: 38px;
+    height: 38px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--ph-soft);
+    color: var(--ph-green);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.a11y-btn:hover:not(:disabled) {
+    background: var(--ph-green);
+    color: #ffffff;
+}
+
+.a11y-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.a11y-btn:focus-visible,
+button:focus-visible {
+    outline: 3px solid #c17b27;
+    outline-offset: 2px;
+}
+
+.a11y-scale {
+    min-width: 42px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* ---------- Dark mode ---------- */
+body.dark-theme {
+    --ph-surface: #1f2722;
+    --ph-border: #34423a;
+    --ph-muted: #b5c2b8;
+    --ph-soft: #2a352e;
+    --ph-green: #7fc795;
+
+    background-color: #151b17;
+    color: #e6ede7;
+}
+
+body.dark-theme .site-header,
+body.dark-theme .navbar,
+body.dark-theme .pet-card,
+body.dark-theme .card,
+body.dark-theme .contact-info,
+body.dark-theme .visiting-hours,
+body.dark-theme form,
+body.dark-theme section {
+    background-color: transparent;
+    color: inherit;
+    border-color: var(--ph-border);
+}
+
+body.dark-theme .site-header {
+    background-color: #1b221e;
+}
+
+body.dark-theme .pet-card,
+body.dark-theme .card {
+    background-color: var(--ph-surface);
+}
+
+body.dark-theme .site-footer {
+    background-color: #1b221e;
+}
+
+body.dark-theme .logo,
+body.dark-theme .site-footer a,
+body.dark-theme .nav-links a:hover,
+body.dark-theme .nav-links a[aria-current="page"],
+body.dark-theme main a:not(.button):not(.btn) {
+    color: var(--ph-green);
+}
+
+body.dark-theme p,
+body.dark-theme .pet-card p,
+body.dark-theme .hero p,
+body.dark-theme .text-muted {
+    color: var(--ph-muted) !important;
+}
+
+body.dark-theme .button,
+body.dark-theme .btn.button {
+    background-color: #3f8a57;
+    color: #ffffff;
+}
+
+body.dark-theme .table {
+    --bs-table-bg: transparent;
+    --bs-table-color: #e6ede7;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    .stats-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .photo-grid--small {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .stat-tiles {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 8px;
+    }
+
+    .stat-tile {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .stat-number {
+        font-size: 22px;
+    }
+
+    .photo-grid,
+    .photo-grid--small {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .photo-card img,
+    .photo-grid--small .photo-card img {
+        height: 140px;
+    }
+
+    .photo-card figcaption {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .best-match {
+        grid-template-columns: 1fr;
+    }
+
+    .a11y-panel {
+        right: 8px;
+        bottom: 8px;
+    }
+
+    main {
+        padding-bottom: 80px; /* room for the accessibility panel */
+    }
+}
