@@ -1,4 +1,3 @@
-
 class ThemeManager {
     constructor(storage) {
         this.storage = storage;

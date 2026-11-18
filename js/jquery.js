@@ -1,5 +1,3 @@
-
-// Wait until the page is fully loaded
 $(document).ready(function () {
 
     $("#toggle-hours").on("click", function () {

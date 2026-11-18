@@ -1,4 +1,3 @@
-
 class MatchQuiz {
     constructor(form, petList, storage) {
         this.$form = $(form);
@@ -166,7 +165,7 @@ class MatchQuiz {
         const date = new Date(saved.date).toLocaleDateString();
 
         $box.html(`
-            <span>💾 Your last result (${date}): <strong>${best.pet.name}</strong> — ${best.score}% match</span>
+            <span>💾 Your last result (${date}): <strong>${best.pet.name}</strong> - ${best.score}% match</span>
             <span class="d-flex gap-2">
                 <button type="button" class="btn btn-sm btn-success" id="show-saved">Show</button>
                 <button type="button" class="btn btn-sm btn-outline-danger" id="clear-saved-result">Clear</button>

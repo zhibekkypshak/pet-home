@@ -1,4 +1,3 @@
-
 const favoritesStorage = new StorageManager("petFavorites", []);
 let favorites = favoritesStorage.load().filter(name => typeof name === "string");
 

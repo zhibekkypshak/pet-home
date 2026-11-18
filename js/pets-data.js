@@ -1,4 +1,3 @@
-
 class Pet {
     constructor({ name, type, age, image, page, contactValue, energy, time, experience, space, goodWithKids }) {
         this.name = name;

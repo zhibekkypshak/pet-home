@@ -1,10 +1,7 @@
-
-// Select form elements
 const contactForm = document.getElementById("contact-form");
 const formStatus = document.getElementById("form-status");
 const petSelect = document.getElementById("pet");
 
-// Get pet from URL
 const params = new URLSearchParams(window.location.search);
 const selectedPet = params.get("pet");
 
@@ -18,7 +15,6 @@ if (selectedPet && petSelect) {
     }
 }
 
-// Create an error message near each field
 function showError(field, message) {
     let error = field.parentElement.querySelector(".validation-error");
 
@@ -33,7 +29,6 @@ function showError(field, message) {
     field.setAttribute("aria-invalid", "true");
 }
 
-// Remove error message
 function clearError(field) {
     const error = field.parentElement.querySelector(".validation-error");
 
@@ -45,7 +40,6 @@ function clearError(field) {
     field.removeAttribute("aria-invalid");
 }
 
-// Validate one field
 function validateField(field) {
     const value = field.value.trim();
 
@@ -76,7 +70,6 @@ function validateField(field) {
     return true;
 }
 
-// Validate all required fields
 function validateForm() {
     const name = document.getElementById("name");
     const email = document.getElementById("email");
@@ -89,7 +82,6 @@ function validateForm() {
     return nameValid && emailValid && messageValid;
 }
 
-// Validate fields while the user types
 const fields = [
     document.getElementById("name"),
     document.getElementById("email"),
@@ -102,7 +94,6 @@ fields.forEach(field => {
     });
 });
 
-// Handle form submission
 contactForm.addEventListener("submit", function(event) {
     event.preventDefault();
 
