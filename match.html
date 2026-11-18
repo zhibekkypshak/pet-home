@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="Answer five quick questions and find the Pet Home pet that matches your lifestyle.">
+
+    <title>Pet Home | Pet Match Quiz</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style-zhibek.css">
+    <link rel="stylesheet" href="css/style-final.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main navigation">
+            <a href="index.html" class="logo">PET HOME</a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pets.html">Pets</a></li>
+                <li><a href="breeds.html">Breeds</a></li>
+                <li><a href="match.html" aria-current="page">Pet Match</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section aria-labelledby="match-heading" class="quiz-wrapper">
+            <h1 id="match-heading">Pet Match Quiz</h1>
+            <p class="mb-4">Answer 5 quick questions and we will calculate which of our pets fits your lifestyle best.</p>
+
+            <!-- Saved result from a previous visit (filled by JavaScript) -->
+            <div id="saved-result" class="saved-result mb-4" hidden></div>
+
+            <form id="match-form" class="quiz-card" novalidate>
+                <div class="d-flex justify-content-between small text-muted mb-2">
+                    <span id="step-label">Step 1 of 5</span>
+                    <span id="step-percent">0%</span>
+                </div>
+                <div class="progress mb-4" role="progressbar" aria-label="Quiz progress"
+                     aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                    <div id="quiz-progress" class="progress-bar bg-success" style="width: 0%"></div>
+                </div>
+
+                <fieldset class="quiz-step" data-step="1">
+                    <legend>Where do you live?</legend>
+                    <label class="quiz-option"><input type="radio" name="space" value="apartment"> 🏢 Apartment</label>
+                    <label class="quiz-option"><input type="radio" name="space" value="house"> 🏡 House with a yard</label>
+                </fieldset>
+
+                <fieldset class="quiz-step" data-step="2" hidden>
+                    <legend>How much free time can you give a pet each day?</legend>
+                    <label class="quiz-option"><input type="radio" name="time" value="1"> ⏱ Less than 1 hour</label>
+                    <label class="quiz-option"><input type="radio" name="time" value="2"> 🕑 1–3 hours</label>
+                    <label class="quiz-option"><input type="radio" name="time" value="3"> 🕓 More than 3 hours</label>
+                </fieldset>
+
+                <fieldset class="quiz-step" data-step="3" hidden>
+                    <legend>How active are you?</legend>
+                    <label class="quiz-option"><input type="radio" name="energy" value="1"> 🛋 Calm — I love quiet evenings</label>
+                    <label class="quiz-option"><input type="radio" name="energy" value="2"> 🚶 Moderate — daily walks</label>
+                    <label class="quiz-option"><input type="radio" name="energy" value="3"> 🏃 Very active — running, hiking</label>
+                </fieldset>
+
+                <fieldset class="quiz-step" data-step="4" hidden>
+                    <legend>Have you had pets before?</legend>
+                    <label class="quiz-option"><input type="radio" name="experience" value="1"> 🌱 This will be my first pet</label>
+                    <label class="quiz-option"><input type="radio" name="experience" value="2"> 🐾 I have had a pet before</label>
+                    <label class="quiz-option"><input type="radio" name="experience" value="3"> 🏆 I am very experienced</label>
+                </fieldset>
+
+                <fieldset class="quiz-step" data-step="5" hidden>
+                    <legend>Are there children in your home?</legend>
+                    <label class="quiz-option"><input type="radio" name="kids" value="yes"> 👨‍👩‍👧 Yes</label>
+                    <label class="quiz-option"><input type="radio" name="kids" value="no"> 🙂 No</label>
+                </fieldset>
+
+                <p id="quiz-error" class="text-danger fw-bold mt-2" aria-live="assertive"></p>
+
+                <div class="d-flex justify-content-between mt-3">
+                    <button type="button" id="prev-step" class="btn btn-outline-secondary" disabled>← Back</button>
+                    <button type="button" id="next-step" class="btn button">Next →</button>
+                    <button type="submit" id="submit-quiz" class="btn button" hidden>See my match 🐾</button>
+                </div>
+            </form>
+
+            <section id="quiz-results" class="mt-4" aria-live="polite" hidden></section>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Contact Us</p>
+
+        <a href="mailto:petadoption@example.com">
+            petadoption@example.com
+        </a>
+
+        <p>&copy; 2026 Pet Home</p>
+    </footer>
+
+    <script src="js/storage.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/pets-data.js"></script>
+    <script src="js/match.js"></script>
+
+    <script src="js/theme.js"></script>
+</body>
+</html>
