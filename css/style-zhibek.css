@@ -26,7 +26,6 @@ p {
     margin-top: 0;
 }
 
-
 .site-header {
     background-color: #ffffff;
     border-bottom: 1px solid #e2e8df;
@@ -74,13 +73,11 @@ p {
     text-underline-offset: 6px;
 }
 
-
 main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 32px 24px 56px;
 }
-
 
 .hero {
     margin-bottom: 48px;
@@ -110,7 +107,6 @@ main {
     font-size: 18px;
 }
 
-
 .button {
     display: inline-block;
     padding: 12px 24px;
@@ -133,7 +129,6 @@ a:focus-visible {
     outline-offset: 4px;
 }
 
-
 .featured-pets h2 {
     margin-bottom: 24px;
     font-size: 28px;
@@ -144,7 +139,6 @@ a:focus-visible {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
 }
-
 
 .pet-card {
     position: relative;
@@ -176,7 +170,6 @@ a:focus-visible {
     color: #5d685f;
 }
 
-
 .site-footer {
     padding: 28px 24px;
     background-color: #edf3e9;
@@ -195,7 +188,6 @@ a:focus-visible {
     object-position: center bottom;
 }
 
-
 @media (max-width: 900px) {
     .nav-links {
         gap: 18px;
@@ -213,7 +205,6 @@ a:focus-visible {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
-
 
 @media (max-width: 600px) {
     .navbar {
